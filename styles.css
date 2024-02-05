@@ -1,0 +1,360 @@
+/* components of body */
+body {
+  background-image: url("./resorces/backgroung-image.svg");
+  background-size: cover;
+}
+body {
+  padding: 0%;
+  margin: 0%;
+}
+
+/* components of header */
+.header-homepage {
+  width: 1728px;
+  height: 44px;
+  flex-shrink: 0;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.header-logo {
+  text-align: left;
+  font-size: 27px;
+  font-weight: bolder;
+}
+
+.header-navigation {
+  text-decoration: none;
+  display: flex;
+  width: 275px;
+  height: 17px;
+  height: 45px;
+  align-items: center;
+  padding-left: 20px;
+}
+.navigation {
+  color: #ffffff;
+  font-family: Itim;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: normal;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* components of side banner */
+.banner {
+  height: 5px;
+  flex-shrink: 0;
+  margin-top: 15px;
+  display: flex;
+}
+.banner-image {
+  padding-left: 5px;
+  padding-top: 40px;
+}
+
+/* components of footer */
+footer {
+  width: 100%;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  color: #fbfbfb;
+  background-color: #ad5400;
+  position: fixed;
+  bottom: 0;
+}
+
+.fa {
+  padding: 20px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin: 10px 2px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #16097a;
+  color: white;
+}
+.fa-instagram {
+  background: #9b0052;
+  color: white;
+}
+.fa-youtube {
+  background: red;
+  color: white;
+}
+.contact {
+  padding-left: 10px;
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.media-icons {
+  padding-right: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .fa {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .contact {
+    font-size: 10px;
+    margin-top: 4px;
+  }
+}
+
+/* components of questions page */
+
+.questions-chart {
+  width: 1500px;
+  height: 700px;
+  background-color: rgb(255, 248, 238);
+  border-radius: 10px;
+  border: 5px solid orange;
+  margin-top: 90px;
+}
+@media only screen and (max-width: 600px) {
+  .questions-chart {
+    width: 90%;
+    height: auto;
+    min-height: 400px;
+    margin-top: 50px;
+  }
+
+  .question-heading {
+    font-size: 24px;
+  }
+  .buttons {
+    padding-bottom: 10px;
+  }
+}
+
+.options-layout {
+  width: 95%;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.107);
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px; /* Adjust the value to change the roundness */
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 20px;
+}
+
+.options-label {
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .options-label {
+    font-size: 16px; /* Adjust as needed */
+  }
+}
+
+.form-questions {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.question-heading {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  text-decoration: underline;
+  font-family: Itim;
+  font-weight: 900;
+  font-size: 36px;
+}
+.question-layout {
+  width: calc(95% - 20px); /* Adjusted width to account for padding */
+  height: 100px;
+  font-size: 30px;
+  font-family: Itim;
+  padding-left: 30px;
+  margin-top: 100px;
+  margin-left: 10px; /* Added margin to align with other elements */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .question-layout {
+    font-size: 20px; /* Adjust text size for smaller screens */
+  }
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.flabel {
+  font-size: 30px;
+}
+
+.content-for-homepage,
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+/* indexpage items */
+.indexpage-box {
+  width: 900px;
+  height: 700px;
+  background-color: rgb(255, 248, 238);
+  border-radius: 10px;
+  border: 5px solid orange;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.formOne {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.question-heading-indexpage {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Itim;
+  font-weight: 900;
+  font-size: 36px;
+}
+
+/* Media Query for phones */
+@media only screen and (max-width: 600px) {
+  .indexpage-box {
+    width: 90%;
+    height: auto;
+    min-height: 400px;
+    margin-top: 50px;
+  }
+
+  .question-heading-indexpage {
+    font-size: 24px;
+  }
+}
+.form-checkbox {
+  height: 20px;
+  width: 20px;
+  background-color: #9b0052;
+}
+/* .asnwers {
+  font-size: larger;
+  padding-left: 25px;
+  padding-top: 15px;
+} */
+
+.result-sentence-box {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-sentence {
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: Itim;
+}
+
+@media only screen and (max-width: 600px) {
+  .result-sentence {
+    font-size: 35px;
+    text-align: center; /* Center align text */
+    padding: 0 20px; /* Add space on each side */
+  }
+  .result-sentence-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: orange;
+  color: white;
+  padding: 10px 40px 10px 20px; /* Increased right padding for symbol */
+  border: 2px solid rgb(0, 0, 114);
+  border-radius: 5px;
+  font-size: 18px; /* Increased font size */
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  cursor: pointer;
+  position: relative; /* Positioning for the symbol */
+  width: 100%; /* Make select element full width */
+  box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+.form-select:hover {
+  background-color: rgb(0, 0, 173);
+  border-color: rgb(204, 143, 28);
+  color: white;
+}
+
+.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px orange;
+}
+
+/* Symbol styles */
+.form-select::after {
+  content: "\25BC"; /* Unicode character for down-pointing triangle */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 600px) {
+  .form-select {
+    font-size: 14px;
+    padding: 8px 30px 8px 15px; /* Adjust padding for smaller screens */
+  }
+}
