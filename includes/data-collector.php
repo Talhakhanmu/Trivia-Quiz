@@ -1,101 +1,79 @@
 <?php
 
+// Starting session
 session_start();
 
+// Including necessary files
 include 'tools.php';
 include 'db.php';
 
+// Checking if 'quiz' session variable is set, if not, set it to null
+if (isset($_SESSION["quiz"])) {
+    $quiz = $_SESSION["quiz"];
+} else {
+    $quiz = null;
+}
 
-
-if (isset($_SESSION["quiz"])) $quiz = $_SESSION["quiz"];
-else $quiz = null;
-
-
-
-if(isset($_POST["lastQuestionIndex"])){
+// Checking if lastQuestionIndex is set in POST data
+if (isset($_POST["lastQuestionIndex"])) {
+    // Converting lastQuestionIndex to integer
     $lastQuestionIndex = intval($_POST["lastQuestionIndex"]);
 
-        //collecting the data
-    if($lastQuestionIndex >= 0){
+    // Collecting data
+    if ($lastQuestionIndex >= 0) {
         $questionName = "question-" . $lastQuestionIndex;
         $_SESSION[$questionName] = $_POST;
     }
-
-}else{
+} else {
     $lastQuestionIndex = -1;
-
 }
 
-// Abhängig von der aktuellen Hauptseite: Bereite die benötigten Seitendaten vor.
-$scriptName = $_SERVER['SCRIPT_NAME']; // https://www.php.net/manual/en/reserved.variables.server.php
+// Depending on the current main page, prepare the required page data
+$scriptName = $_SERVER['SCRIPT_NAME']; // Getting the current script name
 
-// index.php---------------------------------------
-if(str_contains($scriptName, 'index')){
-
+// If index.php is the current page
+if (str_contains($scriptName, 'index')) {
+    // Unset session data to reset quiz
     session_unset();
-
-
-
     $quiz = null;
-
 }
-// question.php---------------------------------------
-else if (str_contains($scriptName,'question')){
-
-
-    if ($quiz === NULL ) {
-
+// If question.php is the current page
+else if (str_contains($scriptName, 'question')) {
+    // If quiz is not set, initialize quiz with data
+    if ($quiz === NULL) {
         $questionNum = intval($_POST["questionNum"]);
-    
-        // we pick the sequence of the question id from the database
         $questionIdSequence = fetchQuestionIdSequence(
-            $_POST["topic"], 
-            $questionNum, 
+            $_POST["topic"],
+            $questionNum,
             $dbConn
-        ); 
-    
-        // calculate the real number of questions
+        );
         $questionNum = count($questionIdSequence);
 
-
-
-
-
         $quiz = array(
-            "topic" =>$_POST["topic"],
+            "topic" => $_POST["topic"],
             "questionNum" => $questionNum,
             "lastQuestionIndex" => $lastQuestionIndex,
             "currentQuestionIndex" => -1,
             "questionIdSequence" => $questionIdSequence
-    
         );
-    
+
         $_SESSION["quiz"] = $quiz;
-    
     }
 
+    // Calculating current question index
     $currentQuestionIndex = $lastQuestionIndex + 1;
 
-    if($currentQuestionIndex >= $quiz["questionNum"] -1){
-        // Auf die result.php Seite springen
+    // Determining action URL based on current question index
+    if ($currentQuestionIndex >= $quiz["questionNum"] - 1) {
+        // Redirect to result.php
         $actionUrl = "result.php";
-
-    }else{
+    } else {
         $actionUrl = "questions.php";
     }
-
-
 }
-
-// result.php---------------------------------------
-
-else if (str_contains($scriptName,'result')){
-
-    
+// If result.php is the current page
+else if (str_contains($scriptName, 'result')) {
 }
 
 
-
-
-
-
+?>

@@ -122,9 +122,13 @@ footer {
 .questions-chart {
   width: 1500px;
   height: 700px;
-  background-color: rgb(255, 248, 238);
+  background: linear-gradient(
+    to right,
+    rgb(255, 200, 100),
+    rgb(255, 160, 50),
+    rgb(240, 133, 39)
+  );
   border-radius: 10px;
-  border: 5px solid orange;
   margin-top: 90px;
 }
 @media only screen and (max-width: 600px) {
@@ -188,7 +192,7 @@ footer {
   text-decoration: underline;
   font-family: Itim;
   font-weight: 900;
-  font-size: 36px;
+  font-size: 46px;
 }
 .question-layout {
   width: calc(95% - 20px); /* Adjusted width to account for padding */
@@ -233,35 +237,28 @@ footer {
 .indexpage-box {
   width: 900px;
   height: 700px;
-  background-color: rgb(255, 248, 238);
   border-radius: 10px;
-  border: 5px solid orange;
   margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(
+    to right,
+    rgb(255, 200, 100),
+    rgb(255, 160, 50),
+    rgb(240, 133, 39)
+  );
 }
 
 .formOne {
   width: 80%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
-
-.question-heading-indexpage {
-  width: 100%;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Itim;
-  font-weight: 900;
-  font-size: 36px;
-}
-
 /* Media Query for phones */
 @media only screen and (max-width: 600px) {
   .indexpage-box {
@@ -271,7 +268,7 @@ footer {
     margin-top: 50px;
   }
 
-  .question-heading-indexpage {
+  .question-heading {
     font-size: 24px;
   }
 }
@@ -292,24 +289,38 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .result-sentence {
+  font-size: 70px;
+  font-weight: bolder;
+  font-family: Itim;
+  padding-bottom: 30px;
+}
+.points {
   font-size: 50px;
   font-weight: bolder;
   font-family: Itim;
+  padding-bottom: 25px;
 }
 
 @media only screen and (max-width: 600px) {
   .result-sentence {
     font-size: 35px;
-    text-align: center; /* Center align text */
-    padding: 0 20px; /* Add space on each side */
+    text-align: center;
+    padding: 0 20px;
   }
   .result-sentence-box {
     display: flex;
     align-items: center;
     justify-content: center;
+    max-height: 150px;
+  }
+  .points {
+    font-size: 25px;
+    text-align: center;
+    padding: 0 20px;
   }
 }
 .form-select {
@@ -319,18 +330,16 @@ footer {
   background-color: orange;
   color: white;
   padding: 10px 40px 10px 20px; /* Increased right padding for symbol */
-  border: 2px solid rgb(0, 0, 114);
+  border: 2px solid rgb(13, 13, 205);
   border-radius: 5px;
-  font-size: 18px; /* Increased font size */
+  font-size: 22px;
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
   cursor: pointer;
-  position: relative; /* Positioning for the symbol */
   width: 100%; /* Make select element full width */
-  box-sizing: border-box; /* Include padding and border in width calculation */
 }
 
 .form-select:hover {
-  background-color: rgb(0, 0, 173);
+  background-color: rgb(55, 55, 250);
   border-color: rgb(204, 143, 28);
   color: white;
 }

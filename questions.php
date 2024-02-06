@@ -89,6 +89,8 @@ include './includes/data-collector.php';
             $correctItems[$i] = intval($item);
         }
 
+        $maxPoints = count($correctItems);
+
         // ...
         if(count($correctItems) > 1 )$multipleChoice = true;
         else $multipleChoice = false;//Bedautet Single Choise
@@ -129,10 +131,11 @@ include './includes/data-collector.php';
     ?>
 
 
-    <input type="hidden"  id="questionNum" name="questionNum" value="<?php echo $quiz["questionNum"];?>">
+    <input type="hidden"  id="questionNum"        name="questionNum"       value="<?php echo $quiz["questionNum"];?>">
     <input type="hidden"  id="lastQuestionIndex"  name="lastQuestionIndex" value="<?php echo $currentQuestionIndex;?>">
-    <input type="hidden"  id="multipleChoice" name="multipleChoice" value="<?php echo $multipleChoice ?  'true' : 'false'; ?>">
-    <input type="hidden"  id="indexStep" name="indexStep" value="1">
+    <input type="hidden"  id="multipleChoice"     name="multipleChoice"    value="<?php echo $multipleChoice ?  'true' : 'false'; ?>">
+    <input type="hidden"  id="indexStep"          name="indexStep"         value="1">
+    <input type="hidden"  id="maxPoints"          name="maxPoints"         value="<?php echo $maxPoints; ?>">
 <!-- BUTTONS-------------------------------------------------------------- -->
 
 <div class="buttons">
@@ -158,6 +161,5 @@ include './includes/data-collector.php';
     include_once "./layout-components/footer.php"
     ?>
   </footer>
-        <?php prettyPrint($_SESSION, "\$_SESSION"); ?>
 </body>
 </html>

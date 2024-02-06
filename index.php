@@ -24,8 +24,8 @@
         <div class="content-for-homepage">
             <div class="indexpage-box">
                 <form class="formOne" action="questions.php" id="topic" name="topic" method="post">
-                    <label class="question-heading-indexpage" for="topic">
-                        <h1 class="question-heading">Select The Topic</h1>
+                    <label  class="question-heading" for="topic">
+                        <h1  class="question-heading">Select The Topic</h1>
                     </label><br>
                     <div class="input-group mb-3">
     <select class="form-select" name="topic" id="inputGroupSelect01">
@@ -47,7 +47,7 @@
 
 
                     <!-- number of questions -->
-                    <label class="question-heading-indexpage" for="questionNum">
+                    <label class="question-heading" for="questionNum">
                         <h1 class="question-heading">Number Of Questions</h1>
                     </label><br>
                     <input class="input-group mb-3" type="number" id="questionNum"  name="questionNum" min="1" max="50" value="" method="post><br><br>
